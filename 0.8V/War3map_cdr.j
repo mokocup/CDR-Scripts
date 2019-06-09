@@ -19645,6 +19645,7 @@ local integer e7=GetUnitTypeId(GetTriggerUnit())
 local integer e9
 local unit e8
 local integer bR
+local real spawntime
 if GetUnitPointValue(GetTriggerUnit())!=100 then
 set bR=1
 loop
@@ -19659,7 +19660,12 @@ endloop
 set KM=CreateTimer()
 call SaveInteger(e5,GetHandleId(KM),0,e7)
 call SaveInteger(e5,GetHandleId(KM),1,e9)
-call TimerStart(KM,I2R(GetUnitPointValueByType(GetUnitTypeId(GetTriggerUnit()))),false,function Bge)
+set spawntime=I2R(GetUnitPointValueByType(GetUnitTypeId(GetTriggerUnit())))-cusspawn
+if(spawntime>0)then
+call TimerStart(KM,spawntime,false,function Bge)
+else
+call TimerStart(KM,0.01,false,function Bge)
+endif
 endif
 set KM=null
 set e8=null
