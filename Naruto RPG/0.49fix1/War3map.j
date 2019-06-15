@@ -35941,7 +35941,7 @@ function Trig_CreepRegion_Actions takes nothing returns nothing
     local integer unitCode
     local unit tempUnit
     local integer loopA
-
+local real spawntime=0
     // 사망한 적대적 유닛의 점수값이 100이 아닐경우 리젠을 대기합니다.
     if ( GetUnitPointValue(GetTriggerUnit()) != 100 ) then
         set loopA=1
@@ -35957,7 +35957,12 @@ function Trig_CreepRegion_Actions takes nothing returns nothing
         set t=CreateTimer()
         call SaveInteger(udg_regionTimerHash, GetHandleId(t), 0, unitType)
         call SaveInteger(udg_regionTimerHash, GetHandleId(t), 1, unitCode)
-        call TimerStart(t, I2R(GetUnitPointValueByType(GetUnitTypeId(GetTriggerUnit()))), false, function Trig_CreepRegion_Timer)
+		set spawntime=I2R(GetUnitPointValueByType(GetUnitTypeId(GetTriggerUnit())))-cusspawn
+if(spawntime>0)then
+call TimerStart(t,spawntime,false,function Trig_CreepRegion_Timer)
+else
+call TimerStart(t,.01,false,function Trig_CreepRegion_Timer)
+endif
     endif
 
     // 핸들 Id값을 확보하기 위해 빈 공간 설정을 합니다.
