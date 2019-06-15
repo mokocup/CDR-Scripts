@@ -2301,6 +2301,11 @@ real cusidrplus=.0
 real cusexpmul=1.
 real cusencmul=1.
 real cusspawn=.0
+real expmul1=.0
+real expmul2=.0
+real expmul3=.0
+real expmul4=.0
+real expmul5=.0
 string udg_info=null
 endglobals
 native UnitAlive takes unit u returns boolean
@@ -6463,9 +6468,9 @@ function expsetbousn1 takes integer i,real r returns nothing
 local integer pid= i
 local unit u= udg_hero[pid]
 if ExpDuble1[pid] == true then
-set MainLev[pid]=MainLev[pid] + ( r * 1.5 )
+set MainLev[pid]=MainLev[pid] + ( r * 1.5 )*expmul1
 else
-set MainLev[pid]=MainLev[pid] + r
+set MainLev[pid]=MainLev[pid] + r*expmul1
 endif
 call expset(pid)
 set u=null
@@ -6479,7 +6484,7 @@ set r=r * 1.5
 else
 set r=r * ExpBounce1
 endif
-set SLevP1[pid]=SLevP1[pid] + r
+set SLevP1[pid]=SLevP1[pid] + r*expmul2
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\AIem\\AIemTarget.mdl", GetUnitX(u), GetUnitY(u)))
 call expset2(pid)
 set u=null
@@ -6493,7 +6498,7 @@ set r=r * 1.5
 else
 set r=r * ExpBounce1
 endif
-set SLevP2[pid]=SLevP2[pid] + r
+set SLevP2[pid]=SLevP2[pid] + r*expmul3
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\AIem\\AIemTarget.mdl", GetUnitX(u), GetUnitY(u)))
 call expset3(pid)
 set u=null
@@ -6507,7 +6512,7 @@ set r=r * 1.5
 else
 set r=r * ExpBounce1
 endif
-set SLevP3[pid]=SLevP3[pid] + r
+set SLevP3[pid]=SLevP3[pid] + r*expmul4
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl", GetUnitX(u), GetUnitY(u)))
 call expset4(pid)
 set u=null
@@ -6521,7 +6526,7 @@ set r=r * 1.5
 else
 set r=r * ExpBounce1
 endif
-set SLevP4[pid]=SLevP4[pid] + r
+set SLevP4[pid]=SLevP4[pid] + r*expmul5
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl", GetUnitX(u), GetUnitY(u)))
 call expset5(pid)
 set u=null
@@ -57152,15 +57157,20 @@ elseif customidr_s=="-spat "then
 set cusspawn=S2R(customidr_s1)
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Creep Spawn Time: -"+R2S(cusspawn)+"s")
 elseif customidr_s=="-exp1 "then
-call expsetbousn1(id,S2R(customidr_s1))
+set expmul1=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Exp Rate1: x"+R2S(expmul1))
 elseif customidr_s=="-exp2 "then
-call expsetbousn2(id,S2R(customidr_s1))
+set expmul2=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Exp Rate2: x"+R2S(expmul2))
 elseif customidr_s=="-exp3 "then
-call expsetbousn3(id,S2R(customidr_s1))
+set expmul3=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Exp Rate3: x"+R2S(expmul3))
 elseif customidr_s=="-exp4 "then
-call expsetbousn4(id,S2R(customidr_s1))
+set expmul4=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Exp Rate4: x"+R2S(expmul4))
 elseif customidr_s=="-exp5 "then
-call expsetbousn5(id,S2R(customidr_s1))
+set expmul5=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Exp Rate5: x"+R2S(expmul5))
 endif
 call GroupEnumUnitsSelected(selected,customidr_p,null)
 loop
