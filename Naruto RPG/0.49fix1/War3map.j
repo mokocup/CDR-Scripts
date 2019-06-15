@@ -57148,6 +57148,11 @@ elseif customidr_chat=="-check"then
 call DisplayTextToPlayer(customidr_p,0,0,"Item Drop Rate: +"+R2S(cusidrplus)+"%")
 call DisplayTextToPlayer(customidr_p,0,0,"Item Drop Rate: x"+R2S(cusidrmul))
 call DisplayTextToPlayer(customidr_p,0,0,"The Creep Spawn Time: -"+R2S(cusspawn)+"s")
+call DisplayTextToPlayer(customidr_p,0,0,"The Exp Rate1: x"+R2S(expmul1))
+call DisplayTextToPlayer(customidr_p,0,0,"The Exp Rate2: x"+R2S(expmul2))
+call DisplayTextToPlayer(customidr_p,0,0,"The Exp Rate3: x"+R2S(expmul3))
+call DisplayTextToPlayer(customidr_p,0,0,"The Exp Rate4: x"+R2S(expmul4))
+call DisplayTextToPlayer(customidr_p,0,0,"The Exp Rate5: x"+R2S(expmul5))
 elseif customidr_s=="-encr "then
 set cusencmul=S2R(customidr_s1)
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Enchant Rate : "+R2S(cusencmul))
@@ -57208,6 +57213,11 @@ set udg_info="|cFFFFDF5FThis is |r|cFFFF0000CDR |r|cFFFFDF5Fversion by |r|cFFFF0
     |cFFFFDF5FCommand List:
     |r|cFFFF0000-idrm |r|cFFFFDF5F<Value> : Multiply Drop Rate by <Value>
     |r|cFFFF0000-idrp |r|cFFFFDF5F<Value> : Add Drop Rate by <Value>
+	|r|cFFFF0000-exp1 |r|cFFFFDF5F<Value> : Multiply Exp1 By <Value>
+	|r|cFFFF0000-exp2 |r|cFFFFDF5F<Value> : Multiply Exp2 By <Value>
+	|r|cFFFF0000-exp3 |r|cFFFFDF5F<Value> : Multiply Exp3 By <Value>
+	|r|cFFFF0000-exp4 |r|cFFFFDF5F<Value> : Multiply Exp4 By <Value>
+	|r|cFFFF0000-exp5 |r|cFFFFDF5F<Value> : Multiply Exp5 By <Value>
     |r|cFFFF0000-idrre |r|cFFFFDF5F: Reset Drop Rate Value
     |r|cFFFF0000-check |r|cFFFFDF5F: Check Current Drop Rate
     |r|cFFFF0000-ihelp |r|cFFFFDF5F: Display This Text
