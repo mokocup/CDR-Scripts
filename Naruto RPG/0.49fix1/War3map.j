@@ -2296,7 +2296,12 @@ real f__result_real
 boolean f__result_boolean
 texttag f__result_texttag
 string f__result_string
-
+real cusidrmul=1.
+real cusidrplus=.0
+real cusexpmul=1.
+real cusencmul=1.
+real cusspawn=.0
+string udg_info=null
 endglobals
 native UnitAlive takes unit u returns boolean
 
@@ -5582,16 +5587,16 @@ endfunction
             if s__SU_gem[this] > 0 then
             call SetPlayerState(GetOwningPlayer(k), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(GetOwningPlayer(k), PLAYER_STATE_RESOURCE_GOLD) + s__SU_gem[this])
             endif
-            if GetRandomReal(0.00, 100.00) <= s__SU_exprate2[this] then
+            if GetRandomReal(0.00, 100.00) <= s__SU_exprate2[this]*cusidrmul+cusidrplus then
             call SetItemLifeBJ(CreateItem('tdx2', x, y), s__SU_exp2[this])
             endif
-            if GetRandomReal(0.00, 100.00) <= s__SU_exprate3[this] then
+            if GetRandomReal(0.00, 100.00) <= s__SU_exprate3[this]*cusidrmul+cusidrplus then
             call SetItemLifeBJ(CreateItem('tint', x, y), s__SU_exp3[this])
             endif
-            if GetRandomReal(0.00, 100.00) <= s__SU_exprate4[this] then
+            if GetRandomReal(0.00, 100.00) <= s__SU_exprate4[this]*cusidrmul+cusidrplus then
             call SetItemLifeBJ(CreateItem('tin2', x, y), s__SU_exp4[this])
             endif
-            if GetRandomReal(0.00, 100.00) <= s__SU_exprate5[this] then
+            if GetRandomReal(0.00, 100.00) <= s__SU_exprate5[this]*cusidrmul+cusidrplus then
             call SetItemLifeBJ(CreateItem('tdex', x, y), s__SU_exp5[this])
             endif
             if s__SU_dropgold[this] > 0 then
@@ -5602,7 +5607,7 @@ endfunction
             endif
             loop
             exitwhen i >= s__SU_num[this]
-            if GetRandomReal(0.00, 100.00) <= LoadReal(UnitDataH2, this, i + 100) then
+            if GetRandomReal(0.00, 100.00) <= LoadReal(UnitDataH2, this, i + 100)*cusidrmul+cusidrplus then
             set it=CreateItem(LoadInteger(UnitDataH2, this, i), GetUnitX(u), GetUnitY(u))
             call SetItemLifeBJ(it, 10.00)
             endif
@@ -31597,7 +31602,7 @@ endfunction//===================================================================
 //TESH.scrollpos=69
 //TESH.alwaysfold=0
 function UPReturnB1 takes integer i returns boolean
-    if GetRandomReal(0.00, 100.00) < itemUpPer[i] then
+    if GetRandomReal(0.00, 100.00) < itemUpPer[i]+cusencmul then
     return true
     else
     return false
@@ -31605,7 +31610,7 @@ function UPReturnB1 takes integer i returns boolean
 endfunction
 
 function UPReturnB2 takes integer i returns boolean
-    if GetRandomReal(0.00, 100.00) < itemUpPer2[i] then
+    if GetRandomReal(0.00, 100.00) < itemUpPer2[i]+cusencmul then
     return true
     else
     return false
@@ -31614,7 +31619,7 @@ endfunction
 
 
 function UPReturnB3 takes integer i returns boolean
-    if GetRandomReal(0.00, 100.00) < itemUpPer3[i] then
+    if GetRandomReal(0.00, 100.00) < itemUpPer3[i]+cusencmul then
     return true
     else
     return false
@@ -31622,7 +31627,7 @@ function UPReturnB3 takes integer i returns boolean
 endfunction
 
 function UPReturnB4 takes integer i returns boolean
-    if GetRandomReal(0.00, 100.00) < itemUpPer4[i] then
+    if GetRandomReal(0.00, 100.00) < itemUpPer4[i]+cusencmul then
     return true
     else
     return false
@@ -57109,6 +57114,97 @@ endfunction
 //***************************************************************************
 
 //===========================================================================
+function custom_idr_set takes nothing returns nothing
+local player customidr_p=GetTriggerPlayer()
+local string customidr_name=GetPlayerName(customidr_p)
+local string customidr_chat=GetEventPlayerChatString()
+local string customidr_s=SubString(customidr_chat,0,6)
+local string customidr_s1=SubString(customidr_chat,6,'d')
+local group selected=CreateGroup()
+local integer id = GetPlayerId(GetTriggerPlayer())+1
+local unit firstunit
+local location unitloc
+if customidr_s=="-idrm "then
+set cusidrmul=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : Item Drop Rate: x"+R2S(cusidrmul)+"%")
+elseif customidr_s=="-idrp "then
+set cusidrplus=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : Item Drop Rate: +"+R2S(cusidrplus))
+elseif customidr_s=="-idrre"then
+set cusidrplus=.0
+set cusidrmul=1.
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"The Item Drop Rate Set To Default Now")
+elseif customidr_chat=="-check"then
+call DisplayTextToPlayer(customidr_p,0,0,"Item Drop Rate: +"+R2S(cusidrplus)+"%")
+call DisplayTextToPlayer(customidr_p,0,0,"Item Drop Rate: x"+R2S(cusidrmul))
+call DisplayTextToPlayer(customidr_p,0,0,"The Creep Spawn Time: -"+R2S(cusspawn)+"s")
+elseif customidr_s=="-encr "then
+set cusencmul=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Enchant Rate : "+R2S(cusencmul))
+elseif customidr_chat=="-ihelp"then
+call DisplayTextToPlayer(customidr_p,0,0,udg_info)
+elseif customidr_s=="-spat "then
+set cusspawn=S2R(customidr_s1)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Creep Spawn Time: -"+R2S(cusspawn)+"s")
+elseif customidr_s=="-exp1 "then
+call expsetbousn1(id,S2R(customidr_s1))
+elseif customidr_s=="-exp2 "then
+call expsetbousn2(id,S2R(customidr_s1))
+elseif customidr_s=="-exp3 "then
+call expsetbousn3(id,S2R(customidr_s1))
+elseif customidr_s=="-exp4 "then
+call expsetbousn4(id,S2R(customidr_s1))
+elseif customidr_s=="-exp5 "then
+call expsetbousn5(id,S2R(customidr_s1))
+endif
+call GroupEnumUnitsSelected(selected,customidr_p,null)
+loop
+set firstunit=FirstOfGroup(selected)
+exitwhen selected==null
+if 1==1then
+endif
+call GroupRemoveUnit(selected,firstunit)
+endloop
+call DestroyGroup(selected)
+call RemoveLocation(unitloc)
+set selected=null
+set firstunit=null
+set customidr_s=null
+set customidr_s1=null
+set customidr_chat=null
+set customidr_name=null
+set customidr_p=null
+endfunction
+function custom_idr takes nothing returns nothing
+local trigger customidr=CreateTrigger()
+local integer cus_count=0
+local quest udg_quest
+loop
+exitwhen cus_count>$B
+call TriggerRegisterPlayerChatEvent(customidr,Player(cus_count),"-",false)
+set cus_count=cus_count+1
+endloop
+set udg_quest=CreateQuest()
+call QuestSetTitle(udg_quest,"Custom Drop Rate Credit")
+set udg_info="|cFFFFDF5FThis is |r|cFFFF0000CDR |r|cFFFFDF5Fversion by |r|cFFFF0000Clanhinata|r
+	|cFFFFDF5FVisit |r|cFFFF0000wc3edit.net|r|cFFFFDF5F for more information|r
+	|cFFFFDF5FJoin my |r|cFFFF0000discord|r|cFFFFDF5F for something idk , maybe map request ?|r
+	|cFFFFDF5FDiscord Link : https://discord.gg/VRtmTxp |r
+    |cFFFFDF5FCommand List:
+    |r|cFFFF0000-idrm |r|cFFFFDF5F<Value> : Multiply Drop Rate by <Value>
+    |r|cFFFF0000-idrp |r|cFFFFDF5F<Value> : Add Drop Rate by <Value>
+    |r|cFFFF0000-idrre |r|cFFFFDF5F: Reset Drop Rate Value
+    |r|cFFFF0000-check |r|cFFFFDF5F: Check Current Drop Rate
+    |r|cFFFF0000-ihelp |r|cFFFFDF5F: Display This Text
+    "
+call QuestSetDescription(udg_quest,udg_info)
+call QuestSetIconPath(udg_quest,"ReplaceableTextures\\CommandButtons\\BTNAmbush.blp")
+call QuestSetRequired(udg_quest,true)
+call TriggerAddAction(customidr,function custom_idr_set)
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,udg_info)
+set udg_quest=null
+endfunction
+
 function main takes nothing returns nothing
     call SetCameraBounds(- 30720.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), - 14336.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 14336.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 30720.0 - GetCameraMargin(CAMERA_MARGIN_TOP), - 30720.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 30720.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 14336.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), - 14336.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
     call SetDayNightModels("Environment\\DNC\\DNCAshenvale\\DNCAshenvaleTerrain\\DNCAshenvaleTerrain.mdl", "Environment\\DNC\\DNCAshenvale\\DNCAshenvaleUnit\\DNCAshenvaleUnit.mdl")
@@ -57116,6 +57212,7 @@ function main takes nothing returns nothing
     call SetAmbientDaySound("AshenvaleDay")
     call SetAmbientNightSound("AshenvaleNight")
     call SetMapMusic("Music", true, 0)
+	call custom_idr()
     call InitSounds()
     call CreateRegions()
     call CreateAllItems()
