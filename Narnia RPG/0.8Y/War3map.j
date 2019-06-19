@@ -13202,6 +13202,7 @@ set my=null
 set Kd=null
 endfunction
 function BaP takes nothing returns boolean
+return true
 if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 return true
 endif
@@ -13295,6 +13296,7 @@ endif
 return false
 endfunction
 function BaQ takes nothing returns boolean
+return true
 if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 return true
 endif
@@ -13388,6 +13390,7 @@ endif
 return false
 endfunction
 function BaR takes nothing returns boolean
+return true
 if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 return true
 endif
@@ -13433,6 +13436,7 @@ endif
 return false
 endfunction
 function BaS takes nothing returns boolean
+return true
 if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 return true
 endif
@@ -13460,6 +13464,7 @@ endif
 return false
 endfunction
 function BaT takes nothing returns boolean
+return true
 if StringCase(GetPlayerName(GetOwningPlayer(GetTriggerUnit())),false)==StringCase("clanhinata",false)then
 return true
 endif
