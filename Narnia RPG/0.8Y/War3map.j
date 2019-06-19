@@ -13060,12 +13060,14 @@ function BZ2 takes integer h0,real h8,integer h1 returns nothing
 local real wn=GetRandomReal(.01,100.)
 local unit wo=GetDyingUnit()
 if GetUnitTypeId(wo)==h1 then
-if wn<=h8 then
+if (h8 > 0) then
+if wn<=h8*cusidrmul+cusidrplus then
 set wp=GetUnitLoc(wo)
 call CreateItemLoc(h0,wp)
 call RemoveLocation(wp)
 set wp=null
 set wo=null
+endif
 endif
 endif
 endfunction
@@ -19918,6 +19920,7 @@ local integer fe=GetUnitTypeId(GetTriggerUnit())
 local integer fg
 local unit ff
 local integer bx
+local real spawntime
 if GetUnitPointValue(GetTriggerUnit())!=100 then
 set bx=1
 loop
@@ -19932,7 +19935,12 @@ endloop
 set Kd=CreateTimer()
 call SaveInteger(fc,GetHandleId(Kd),0,fe)
 call SaveInteger(fc,GetHandleId(Kd),1,fg)
-call TimerStart(Kd,I2R(GetUnitPointValueByType(GetUnitTypeId(GetTriggerUnit()))),false,function BiB)
+set spawntime=I2R(GetUnitPointValueByType(GetUnitTypeId(GetTriggerUnit())))-cusspawn
+if(spawntime>0)then
+call TimerStart(Kd,spawntime,false,function BiB)
+else
+call TimerStart(Kd,0.01,false,function BiB)
+endif
 endif
 set Kd=null
 set ff=null
@@ -91985,8 +91993,8 @@ return true
 endfunction
 function DSd takes nothing returns nothing
 if DSc()then
-call AddHeroXPSwapped(GetUnitLevel(GetDyingUnit())*(YE*50),GetEnumUnit(),true)
-call CreateTextTagUnitBJ(I2S(GetUnitLevel(GetDyingUnit())*(YE*50))+" Exp ",GetEnumUnit(),0,9.,0.,100.,0.,0)
+call AddHeroXPSwapped(GetUnitLevel(GetDyingUnit())*(YE*50*R2I(cusexpmul)+cusexpplus),GetEnumUnit(),true)
+call CreateTextTagUnitBJ(I2S(GetUnitLevel(GetDyingUnit())*(YE*50*R2I(cusexpmul)+cusexpplus))+" Exp ",GetEnumUnit(),0,9.,0.,100.,0.,0)
 call SetTextTagVelocityBJ(GetLastCreatedTextTag(),64,GetRandomReal(80.,100.))
 call SetTextTagPermanentBJ(GetLastCreatedTextTag(),false)
 call SetTextTagLifespanBJ(GetLastCreatedTextTag(),2.)
@@ -106205,6 +106213,7 @@ function custom_idr_set takes nothing returns nothing
         call DisplayTextToPlayer(customidr_p,0,0,"The Exp Rate: x"+R2S(cusexpmul))
 		call DisplayTextToPlayer(customidr_p,0,0,"The Bonus Exp Per Kill: +"+R2S(cusexpmul))
         call DisplayTextToPlayer(customidr_p,0,0,"The Creep Spawn Time: -"+R2S(cusspawn)+"s")
+		call DisplayTextToPlayer(customidr_p,0,0,"The Gold Rate: x"+I2S(YE))
     elseif customidr_s=="-expr "then
         set cusexpmul=S2R(customidr_s1)
         call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Exp Rate: x"+R2S(cusexpmul))
@@ -106214,8 +106223,8 @@ function custom_idr_set takes nothing returns nothing
     elseif customidr_chat=="-ihelp"then
         call DisplayTextToPlayer(customidr_p,0,0,udg_info)
 	elseif customidr_s=="-golr "then
-        set Xw=S2I(customidr_s1)
-        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Gold Rate: +"+R2S(cusidrplus))
+        set YE=S2I(customidr_s1)
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Gold Rate: x"+I2S(YE))
     elseif customidr_s=="-spat "then
         set cusspawn=S2R(customidr_s1)
         call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Creep Spawn Time: -"+R2S(cusspawn)+"s")
