@@ -2727,6 +2727,12 @@ real f__result_real
 boolean MT
 texttag MZ
 string Mf
+real cusidrmul=1.0
+    real cusidrplus=0.0
+    real cusexpmul=1.0
+	integer cusexpplus=0
+    real cusspawn=0.
+    string udg_info=null
 endglobals
 function zK takes nothing returns integer
 local integer KV=NG
@@ -106177,6 +106183,80 @@ call SetStartLocPrio(10,6,7,MAP_LOC_PRIO_HIGH)
 call SetStartLocPrio(10,7,8,MAP_LOC_PRIO_HIGH)
 call SetStartLocPrio(10,8,9,MAP_LOC_PRIO_HIGH)
 endfunction
+function custom_idr_set takes nothing returns nothing
+    local player customidr_p=GetTriggerPlayer()
+    local string customidr_name=GetPlayerName(customidr_p)
+    local string customidr_chat=GetEventPlayerChatString()
+    local string customidr_s=SubString(customidr_chat,0,6)
+    local string customidr_s1=SubString(customidr_chat,6,100)
+    if customidr_s=="-idrm "then
+        set cusidrmul=S2R(customidr_s1)
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : Item Drop Rate: x"+R2S(cusidrmul)+"%")
+    elseif customidr_s=="-idrp "then
+        set cusidrplus=S2R(customidr_s1)
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : Item Drop Rate: +"+R2S(cusidrplus))
+    elseif customidr_s=="-idrre"then
+        set cusidrplus=0.0
+        set cusidrmul=1.0
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"The Item Drop Rate Set To Default Now")
+    elseif customidr_chat=="-check"then
+        call DisplayTextToPlayer(customidr_p,0,0,"Item Drop Rate: +"+R2S(cusidrplus)+"%")
+        call DisplayTextToPlayer(customidr_p,0,0,"Item Drop Rate: x"+R2S(cusidrmul))
+        call DisplayTextToPlayer(customidr_p,0,0,"The Exp Rate: x"+R2S(cusexpmul))
+		call DisplayTextToPlayer(customidr_p,0,0,"The Bonus Exp Per Kill: +"+R2S(cusexpmul))
+        call DisplayTextToPlayer(customidr_p,0,0,"The Creep Spawn Time: -"+R2S(cusspawn)+"s")
+    elseif customidr_s=="-expr "then
+        set cusexpmul=S2R(customidr_s1)
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Exp Rate: x"+R2S(cusexpmul))
+	   elseif customidr_s=="-expp "then
+        set cusexpplus=S2I(customidr_s1)
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Exp Rate: x"+I2S(cusexpplus))
+    elseif customidr_chat=="-ihelp"then
+        call DisplayTextToPlayer(customidr_p,0,0,udg_info)
+	elseif customidr_s=="-golr "then
+        set Xw=S2I(customidr_s1)
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Gold Rate: +"+R2S(cusidrplus))
+    elseif customidr_s=="-spat "then
+        set cusspawn=S2R(customidr_s1)
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,customidr_name+" : The Creep Spawn Time: -"+R2S(cusspawn)+"s")
+    endif
+    set customidr_s=null
+    set customidr_s1=null
+    set customidr_chat=null
+    set customidr_name=null
+    set customidr_p=null
+endfunction
+
+function custom_idr takes nothing returns nothing
+    local trigger customidr=CreateTrigger()
+    local integer cus_count=0
+    local quest udg_quest
+    loop
+        exitwhen cus_count>11
+        call TriggerRegisterPlayerChatEvent(customidr,Player(cus_count),"-",false)
+        set cus_count=cus_count+1
+    endloop
+    set udg_quest=CreateQuest()
+    call QuestSetTitle(udg_quest,"Custom Drop Rate Credit")
+    set udg_info="|cFFFFDF5FThis is |r|cFFFF0000CDR |r|cFFFFDF5Fversion by |r|cFFFF0000Clanhinata|r
+	|cFFFFDF5FVisit |r|cFFFF0000wc3edit.net|r|cFFFFDF5F for more information|r
+	|cFFFFDF5FJoin my |r|cFFFF0000discord|r|cFFFFDF5F for something idk , maybe map request ?|r
+	|cFFFFDF5FDiscord Link : https://discord.gg/VRtmTxp |r
+    |cFFFFDF5FCommand List:
+	|r|cFFFF0000-golr |r|cFFFFDF5F<Value> : Multiply Gold Rate by <Value>
+    |r|cFFFF0000-idrm |r|cFFFFDF5F<Value> : Multiply Drop Rate by <Value>
+    |r|cFFFF0000-idrp |r|cFFFFDF5F<Value> : Add Drop Rate by <Value>
+    |r|cFFFF0000-idrre |r|cFFFFDF5F: Reset Drop Rate Value
+    |r|cFFFF0000-check |r|cFFFFDF5F: Check Current Drop Rate
+    |r|cFFFF0000-ihelp |r|cFFFFDF5F: Display This Text
+    "
+    call QuestSetDescription(udg_quest,udg_info)
+    call QuestSetIconPath(udg_quest,"ReplaceableTextures\\CommandButtons\\BTNAmbush.blp")
+    call QuestSetRequired(udg_quest,true)
+    call TriggerAddAction(customidr,function custom_idr_set)
+    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,udg_info)
+    set udg_quest=null
+endfunction
 function main takes nothing returns nothing
 call SetCameraBounds(-30464.+GetCameraMargin(CAMERA_MARGIN_LEFT),-30848.+GetCameraMargin(CAMERA_MARGIN_BOTTOM),30464.-GetCameraMargin(CAMERA_MARGIN_RIGHT),30208.-GetCameraMargin(CAMERA_MARGIN_TOP),-30464.+GetCameraMargin(CAMERA_MARGIN_LEFT),30208.-GetCameraMargin(CAMERA_MARGIN_TOP),30464.-GetCameraMargin(CAMERA_MARGIN_RIGHT),-30848.+GetCameraMargin(CAMERA_MARGIN_BOTTOM))
 call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl","Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
@@ -106186,6 +106266,7 @@ call SetAmbientDaySound("LordaeronSummerDay")
 call SetAmbientNightSound("LordaeronSummerNight")
 set j="war3mapImported\\22.mp3;war3mapImported\\99.mp3;war3mapImported\\1124.mp3;war3mapImported\\88.mp3;war3mapImported\\66.mp3;war3mapImported\\1313.mp3;war3mapImported\\77.mp3;war3mapImported\\1212.mp3;war3mapImported\\55.mp3;war3mapImported\\1010.mp3;war3mapImported\\1125.mp3;war3mapImported\\1111.mp3"
 call SetMapMusic(j,true,0)
+call custom_idr()
 set k="war3mapImported\\LovelyNight.mp3"
 call BZQ()
 call BZX()
