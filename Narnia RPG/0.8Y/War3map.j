@@ -17055,12 +17055,12 @@ function BfU takes nothing returns nothing
 set S7=true
 set S8=true
 set S9=true
-set TB=true
+set TB=false
 set TC=true
 set TD=true
 set TG=true
 set TH=true
-set TY=true
+set TY=false
 set udg_AFKPreventTime=3600.
 set UP=true
 endfunction
