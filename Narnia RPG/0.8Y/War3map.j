@@ -17153,16 +17153,6 @@ endif
 return true
 endfunction
 function BfY takes nothing returns nothing
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=12
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-if BfX()then
-call CustomDefeatBJ(ConvertedPlayer(GetForLoopIndexA()),"|cffFF3232You were banned from the map!|r")
-else
-endif
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
 endfunction
 function BfZ takes nothing returns nothing
 set bg=CreateTrigger()
@@ -17187,18 +17177,6 @@ endif
 return true
 endfunction
 function Bfc takes nothing returns nothing
-set bj_forLoopAIndex=1
-set bj_forLoopAIndexEnd=12
-loop
-exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-if Bfb()then
-call PauseUnitBJ(true,Zf[GetForLoopIndexA()])
-call DisplayTextToForce(GetForceOfPlayer(ConvertedPlayer(GetForLoopIndexA())),GetPlayerName(GetTriggerPlayer())+"|cffFF3232You have been suspended!|r")
-call DisplayTextToForce(GetForceOfPlayer(ConvertedPlayer(GetForLoopIndexA())),GetPlayerName(GetTriggerPlayer())+"|cffFF3232Please check the Discord for more information.|r")
-else
-endif
-set bj_forLoopAIndex=bj_forLoopAIndex+1
-endloop
 endfunction
 function Bfd takes nothing returns nothing
 set bs=CreateTrigger()
