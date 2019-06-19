@@ -11523,10 +11523,10 @@ call Preload("Rune Inventory Slot 6: '"+el+"' Charges: "+er)
 endif
 call Preload("---------------- Chat Message ----------------")
 call Preload(c1)
-call Preload("Narnia RPG 3 ENG: https://cafe.naver.com/skfmsldk Discord: https://discord.gg/txNMuVQ")
+call Preload("Narnia RPG 3 ENG: https://cafe.naver.com/skfmsldk Discord: http://Discord.gg/VRtmTxp")
 call PreloadGenEnd("Narnia RPG 3 ENG\\"+SZ+"\\"+fR+".txt")
 call PreloadEnd(3.)
-call DisplayTimedTextToPlayer(Jt,0.,0.,10.,"Location |cfffffc01Documents\\WarcraftIII\\CustomMapData\\Narnia RPG 3 ENG\\"+SZ+" in file "+fR+".txt code has been saved.|r\n|c00DFFB4FProducer:RED|r\nTranslation:JacK111111|r")
+call DisplayTimedTextToPlayer(Jt,0.,0.,10.,"Location |cfffffc01Documents\\WarcraftIII\\CustomMapData\\Narnia RPG 3 ENG\\"+SZ+" in file "+fR+".txt code has been saved.|r\n|c00DFFB4FProducer:RED|r")
 call FlushChildHashtable(by,GetHandleId(Jt))
 call FlushChildHashtable(b0,GetHandleId(Jt))
 endif
@@ -13202,10 +13202,10 @@ set my=null
 set Kd=null
 endfunction
 function BaP takes nothing returns boolean
-if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("JacK111111",false)then
+if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 return true
 endif
-if StringCase(aI[GetConvertedPlayerId(GetTriggerPlayer())],false)==StringCase("JacK111111",false)then
+if StringCase(aI[GetConvertedPlayerId(GetTriggerPlayer())],false)==StringCase("clanhinata",false)then
 return true
 endif
 if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("Kiyoshi",false)then
@@ -13295,10 +13295,10 @@ endif
 return false
 endfunction
 function BaQ takes nothing returns boolean
-if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("JacK111111",false)then
+if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 return true
 endif
-if StringCase(aI[GetConvertedPlayerId(GetTriggerPlayer())],false)==StringCase("JacK111111",false)then
+if StringCase(aI[GetConvertedPlayerId(GetTriggerPlayer())],false)==StringCase("clanhinata",false)then
 return true
 endif
 if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("Kiyoshi",false)then
@@ -13388,10 +13388,10 @@ endif
 return false
 endfunction
 function BaR takes nothing returns boolean
-if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("JacK111111",false)then
+if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 return true
 endif
-if StringCase(aI[GetConvertedPlayerId(GetTriggerPlayer())],false)==StringCase("JacK111111",false)then
+if StringCase(aI[GetConvertedPlayerId(GetTriggerPlayer())],false)==StringCase("clanhinata",false)then
 return true
 endif
 if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("Ryun",false)then
@@ -13433,10 +13433,10 @@ endif
 return false
 endfunction
 function BaS takes nothing returns boolean
-if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("JacK111111",false)then
+if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 return true
 endif
-if StringCase(aI[GetConvertedPlayerId(GetTriggerPlayer())],false)==StringCase("JacK111111",false)then
+if StringCase(aI[GetConvertedPlayerId(GetTriggerPlayer())],false)==StringCase("clanhinata",false)then
 return true
 endif
 if StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("Ryun",false)then
@@ -13460,10 +13460,10 @@ endif
 return false
 endfunction
 function BaT takes nothing returns boolean
-if StringCase(GetPlayerName(GetOwningPlayer(GetTriggerUnit())),false)==StringCase("JacK111111",false)then
+if StringCase(GetPlayerName(GetOwningPlayer(GetTriggerUnit())),false)==StringCase("clanhinata",false)then
 return true
 endif
-if StringCase(aI[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))],false)==StringCase("JacK111111",false)then
+if StringCase(aI[GetConvertedPlayerId(GetOwningPlayer(GetTriggerUnit()))],false)==StringCase("clanhinata",false)then
 return true
 endif
 if StringCase(GetPlayerName(GetOwningPlayer(GetTriggerUnit())),false)==StringCase("Ryun",false)then
@@ -13487,10 +13487,10 @@ endif
 return false
 endfunction
 function BaU takes nothing returns boolean
-if StringCase(GetPlayerName(GetOwningPlayer(GetKillingUnitBJ())),false)==StringCase("JacK111111",false)then
+if StringCase(GetPlayerName(GetOwningPlayer(GetKillingUnitBJ())),false)==StringCase("clanhinata",false)then
 return true
 endif
-if StringCase(aI[GetConvertedPlayerId(GetOwningPlayer(GetKillingUnitBJ()))],false)==StringCase("JacK111111",false)then
+if StringCase(aI[GetConvertedPlayerId(GetOwningPlayer(GetKillingUnitBJ()))],false)==StringCase("clanhinata",false)then
 return true
 endif
 if StringCase(GetPlayerName(GetOwningPlayer(GetKillingUnitBJ())),false)==StringCase("Ryun",false)then
@@ -13544,7 +13544,7 @@ set aI[GetConvertedPlayerId(GetTriggerPlayer())]=GetPlayerName(GetTriggerPlayer(
 call SetPlayerName(GetTriggerPlayer(),"|cff800000The Enforcer|r")
 call DisplayTextToForce(GetForceOfPlayer(GetTriggerPlayer()),"Title has been enabled.")
 set dL[GetConvertedPlayerId(GetTriggerPlayer())]=1
-elseif StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("JacK111111",false)then
+elseif StringCase(GetPlayerName(GetTriggerPlayer()),false)==StringCase("clanhinata",false)then
 set aI[GetConvertedPlayerId(GetTriggerPlayer())]=GetPlayerName(GetTriggerPlayer())
 call SetPlayerName(GetTriggerPlayer(),S4[GetConvertedPlayerId(GetTriggerPlayer())]+"Tanks-The-Floor|r")
 call DisplayTextToForce(GetForceOfPlayer(GetTriggerPlayer()),"Title has been enabled.")
@@ -14826,7 +14826,7 @@ call MultiboardSetItemIconBJ(GetLastCreatedMultiboard(),1,4,"war3mapImported\\ic
 call MultiboardSetItemValueBJ(GetLastCreatedMultiboard(),2,4,"|cffffd700Rebirth:")
 call MultiboardSetItemValueBJ(GetLastCreatedMultiboard(),1,5,"|c00ff80c0『Play Time』")
 call MultiboardSetItemValueBJ(GetLastCreatedMultiboard(),1,6,"|cff7fff00Discord:")
-call MultiboardSetItemValueBJ(GetLastCreatedMultiboard(),2,6,"/txNMuVQ")
+call MultiboardSetItemValueBJ(GetLastCreatedMultiboard(),2,6,"/VRtmTxp")
 call MultiboardSetItemStyleBJ(GetLastCreatedMultiboard(),1,7,true,true)
 call MultiboardSetItemIconBJ(GetLastCreatedMultiboard(),1,7,"war3mapImported\\icon (350).blp")
 call MultiboardSetItemValueBJ(GetLastCreatedMultiboard(),2,7,"|cffff00ffChapter:")
@@ -18440,7 +18440,11 @@ set bo=CreateTrigger()
 call TriggerAddAction(bo,function Bfy)
 endfunction
 function Bf0 takes nothing returns nothing
-call CreateQuestBJ(bj_QUESTTYPE_REQ_DISCOVERED,"|c00ff0000Main","|c00ff8040Narnia RPG 3|r\n|c00ff80ffDon't forget to post your replays~ Discord: http://discord.gg/txNMuVQ|r\n\n~ KR map website https://cafe.naver.com/skfmsldk/|r","A RED (3).blp")
+call CreateQuestBJ(0,"|c00ff0000Main","|c00ff8040Narnia RPG 3|r
+|c00ff80ffDon't forget not post your replays~ Discord: http://discord.gg/VRtmTxp|r
+
+~ Wc3edit Website : http://forum.wc3edit.net/shdr-and-cdr-maps-f79/narnia-rpg-megathread-t36406.html
+~ KR map website https://cafe.naver.com/skfmsldk/|r","A RED (3).blp")
 call CreateQuestBJ(bj_QUESTTYPE_REQ_DISCOVERED,"|c00ff0000Chapter Quest","|c00ff80ffThere are currently 8 Chapters implemented.\nPlease keep in mind that you have to do them in order.\n\nChapter 1:\n-Talk to a specific drinking person in the bottom right corner in the town.\n\nChapter 2:\n-Go to the Sandworm area, and in there go to the bottom left corner, during the night.\n\nChapter 3:\n-In front of the Temple of the Sun, slightly to the west. Daytime.\n\nChapter 4: (Rebirth 12+ required)\nIn front of Hanno, the NPC you talked to for Chapter 1.\n\nChapter 5: (Rebirth 19+ required)\nIn the bottom left corner in the Velon area, during day.\n\nChapter 6: (Rebirth 34+ required)\nNear the temple entrance in Scorpion Desert, it's west and a bit south from it, at a rock formation.\n\nChapter 7: (Rebirth 44+ required)\nIn the area where you can find the Ant Queen, the light beam in the bottom left corner.\n\nChapter 8: (Rebirth 70+ required) In the Azure Sky Castle, same area where you can find Grael.","A RED (3).blp")
 call CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED,"|c00ff0000Commands","TRIGSTR_1152","A RED (1).blp")
 call CreateQuestBJ(bj_QUESTTYPE_OPT_DISCOVERED,"|c00ff0000Character Save","The character will not be removed when you save and the items will be bound to you. Also the code will be saved in |cffFFCD28Documents, Warcraft 3 folder, CustomMapData, Narnia RPG 3 ENG |cfffffc01The path is for a text file.","A RED (4).blp")
@@ -20634,19 +20638,19 @@ call TriggerAddCondition(gW,Condition(function BjL))
 call TriggerAddAction(gW,function BjM)
 endfunction
 function BjO takes nothing returns nothing
-set Ub[1]="|cffff1493『Tip: Not playing the official version might get you banned..』|r"
-set Ub[2]="|c00ff8080 『Tip: Please save the replays and upload them in the Discord. Not uploading it may result in penalty.』|r"
-set Ub[3]="|c00ff8080 『Turn on sounds for the raids, the bosses use voice files. Also there is custom background music.』|r"
-set Ub[4]="|c00ff8080 『Tip a lot of information will be in the Discord. Please make sure to join ^-^ 』|r"
-set Ub[5]="|cffff1493『Tip: Make sure to save your replays.』|r"
-set Ub[6]="|cffff1493『Tip:If you do not upload your replays, you may be blocked from the map.』|r"
-set Ub[7]="|cffff1493『Tip:Narnia RPG 3 ENG Please read the rules in the Discord.|r』"
-set Ub[8]="|cffff1493『Tip:Narnia RPG 3 ENG http://Discord.gg/txNMuVQ |r』"
+set Ub[1]="|cffff1493『Tip: Not playing the official version doesn't affect anything.』|r"
+set Ub[2]="|c00ff8080『Tip: Please don't the replays and dont upload them in the Discord. Don't flood my discord with replay.』|r"
+set Ub[3]="|c00ff8080『Tip Narnia CDR Megathread at http://forum.wc3edit.net/shdr-and-cdr-maps-f79/narnia-rpg-megathread-t36406.html.』|r"
+set Ub[4]="|c00ff8080『Tip A lot of information not in the Discord. But please make sure to join ^-^ 』|r"
+set Ub[5]="|cffff1493『Tip: Make sure to not save your replays.』|r"
+set Ub[6]="|cffff1493『Tip: If you do not upload your replays, delete it instead.』|r"
+set Ub[7]="|cffff1493『Tip: You don't need follow the rules in the Discord.』|r"
+set Ub[8]="|cffff1493『Tip: CDR Discord http://Discord.gg/VRtmTxp 』|r"
 set Ub[9]="|cffff1493『You can give items to other people until you bind them with a save.』"
-set Ub[10]="|cffff1493『If you play with a bug or error, it will be counted as abuse.』"
-set Ub[11]="|cffff1493『H_î_ná_tà and Dê_vô_lt_z versions are NOT legit. Please play the original ENG version instead.』"
-set Ub[12]="|cffff1493『Please check for news in the Discord, just in case~.』"
-set Ub[13]="|cffff1493『Do not try to duplicate items. Punishment will be a ban.』"
+set Ub[$A]="|cffff1493『If you play with a bug or error, not my fault, blame Map Maker.』"
+set Ub[$B]="|cffff1493『CDR versions are legit. Jack version are not legit ?.』"
+set Ub[$C]="|cffff1493『Please check for maps in the Discord or wc3edit , just in case~.』"
+set Ub[$D]="|cffff1493『Why you need to duplicate items when you can make it drop.』"
 set Ub[14]="|cffff1493『A Quest Chapter needs to be completed in one go.』"
 set Ub[15]="|cffff1493『Bonus EXP + Gold is being awarded for everyone.』"
 endfunction
@@ -106292,7 +106296,7 @@ call ConditionalTriggerExecute(cH)
 endfunction
 function config takes nothing returns nothing
 call SetMapName("|cffff0000Narnia RPG 3 0.8Y ENG")
-call SetMapDescription("Author : RED|nTranslation: JacK111111")
+call SetMapDescription("Author : RED")
 call SetPlayers(12)
 call SetTeams(12)
 call SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
