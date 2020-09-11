@@ -4196,7 +4196,7 @@ call MultiboardSetItemValueBJ(ov,2,$A,GetHeroProperName(GetTriggerUnit()))
 endif
 endfunction
 function EJ takes nothing returns nothing
-call CreateMultiboardBJ(2,$B,"[Multiplayer]AST TFD_v0.05e")
+call CreateMultiboardBJ(2,$B,"|cFFFF0000[SHDR]|r AST TFD_v0.05e")
 set ov=bj_lastCreatedMultiboard
 call MultiboardSetItemValueBJ(ov,1,1,("|c00FF0303"+GetPlayerName(Player(0))))
 call MultiboardSetItemValueBJ(ov,1,2,("|c000042FF"+GetPlayerName(Player(1))))
@@ -22564,16 +22564,16 @@ function Tev takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n001')
 endfunction
 function Txv takes nothing returns boolean
-return(Fv[1]<=R2I(50.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Tov takes nothing returns boolean
-return(Fv[2]<=R2I(50.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Trv takes nothing returns boolean
-return(Fv[3]<=R2I(50.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function Tiv takes nothing returns boolean
-return(Fv[4]<=R2I(50.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function Tav takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,R2I(100.))
@@ -22618,10 +22618,10 @@ function TVv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n004')
 endfunction
 function TEv takes nothing returns boolean
-return(Fv[1]<=R2I(50.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function TXv takes nothing returns boolean
-return(Fv[2]<=R2I(50.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function TOv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -22648,7 +22648,7 @@ function TIv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n007')
 endfunction
 function TAv takes nothing returns boolean
-return(Fv[1]<=R2I(10.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function TNv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -22666,10 +22666,10 @@ function TBv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n008')
 endfunction
 function Tcv takes nothing returns boolean
-return(Fv[1]<=R2I(50.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function TCv takes nothing returns boolean
-return(Fv[2]<=R2I(50.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Tdv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -22697,16 +22697,16 @@ function Tfv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00B')
 endfunction
 function TFv takes nothing returns boolean
-return(Fv[1]<=R2I(30.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Tgv takes nothing returns boolean
-return(Fv[2]<=R2I(30.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function TGv takes nothing returns boolean
-return(Fv[3]<=R2I(30.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function Thv takes nothing returns boolean
-return(Fv[4]<=R2I(22.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function THv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -22754,13 +22754,13 @@ function TJv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00E')
 endfunction
 function Tkv takes nothing returns boolean
-return(Fv[1]<=R2I(30.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function TKv takes nothing returns boolean
-return(Fv[2]<=R2I(30.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Tlv takes nothing returns boolean
-return(Fv[3]<=R2I(30.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function TLv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -22798,13 +22798,13 @@ function TMv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00J')
 endfunction
 function Tpv takes nothing returns boolean
-return(Fv[1]<=R2I(22.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function TPv takes nothing returns boolean
-return(Fv[2]<=R2I(22.5))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Tqv takes nothing returns boolean
-return(Fv[3]<=R2I(22.5))
+return(Fv[3]<=R2I(100.))
 endfunction
 function TQv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -22842,25 +22842,25 @@ function TSv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00K')
 endfunction
 function Ttv takes nothing returns boolean
-return(Fv[1]<=R2I(22.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function TTv takes nothing returns boolean
-return(Fv[2]<=R2I(22.5))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Tuv takes nothing returns boolean
-return(Fv[3]<=R2I(22.5))
+return(Fv[3]<=R2I(100.))
 endfunction
 function TUv takes nothing returns boolean
-return(Fv[4]<=R2I(22.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function Twv takes nothing returns boolean
-return(Fv[5]<=R2I(22.5))
+return(Fv[5]<=R2I(100.))
 endfunction
 function TWv takes nothing returns boolean
-return(Fv[6]<=R2I(22.5))
+return(Fv[6]<=R2I(100.))
 endfunction
 function Tyv takes nothing returns boolean
-return(Fv[7]<=R2I(22.5))
+return(Fv[7]<=R2I(100.))
 endfunction
 function TYv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -22938,31 +22938,31 @@ function TZv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00Q')
 endfunction
 function T_v takes nothing returns boolean
-return(Fv[1]<=R2I(17.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function T0v takes nothing returns boolean
-return(Fv[2]<=R2I(17.5))
+return(Fv[2]<=R2I(100.))
 endfunction
 function T1v takes nothing returns boolean
-return(Fv[3]<=R2I(17.5))
+return(Fv[3]<=R2I(100.))
 endfunction
 function T2v takes nothing returns boolean
-return(Fv[4]<=R2I(17.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function T3v takes nothing returns boolean
-return(Fv[5]<=R2I(17.5))
+return(Fv[5]<=R2I(100.))
 endfunction
 function T4v takes nothing returns boolean
-return(Fv[6]<=R2I(17.5))
+return(Fv[6]<=R2I(100.))
 endfunction
 function T5v takes nothing returns boolean
-return(Fv[7]<=R2I(17.5))
+return(Fv[7]<=R2I(100.))
 endfunction
 function T6v takes nothing returns boolean
-return(Fv[8]<=R2I(17.5))
+return(Fv[8]<=R2I(100.))
 endfunction
 function T7v takes nothing returns boolean
-return(Fv[9]<=R2I(17.5))
+return(Fv[9]<=R2I(100.))
 endfunction
 function T8v takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -23060,28 +23060,28 @@ function uvv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00U')
 endfunction
 function uev takes nothing returns boolean
-return(Fv[1]<=R2I(17.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function uxv takes nothing returns boolean
-return(Fv[2]<=R2I(17.5))
+return(Fv[2]<=R2I(100.))
 endfunction
 function uov takes nothing returns boolean
-return(Fv[3]<=R2I(17.5))
+return(Fv[3]<=R2I(100.))
 endfunction
 function urv takes nothing returns boolean
-return(Fv[4]<=R2I(17.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function uiv takes nothing returns boolean
-return(Fv[5]<=R2I(17.5))
+return(Fv[5]<=R2I(100.))
 endfunction
 function uav takes nothing returns boolean
-return(Fv[6]<=R2I(17.5))
+return(Fv[6]<=R2I(100.))
 endfunction
 function unv takes nothing returns boolean
-return(Fv[7]<=R2I(17.5))
+return(Fv[7]<=R2I(100.))
 endfunction
 function uVv takes nothing returns boolean
-return(Fv[8]<=R2I(17.5))
+return(Fv[8]<=R2I(100.))
 endfunction
 function uEv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -23169,16 +23169,16 @@ function uOv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00W')
 endfunction
 function uRv takes nothing returns boolean
-return(Fv[1]<=R2I(12.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function uIv takes nothing returns boolean
-return(Fv[2]<=R2I(12.5))
+return(Fv[2]<=R2I(100.))
 endfunction
 function uAv takes nothing returns boolean
-return(Fv[3]<=R2I(12.5))
+return(Fv[3]<=R2I(100.))
 endfunction
 function uNv takes nothing returns boolean
-return(Fv[4]<=R2I(12.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function ubv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -23226,25 +23226,25 @@ function ucv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='u001')
 endfunction
 function uCv takes nothing returns boolean
-return(Fv[1]<=R2I(22.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function udv takes nothing returns boolean
-return(Fv[2]<=R2I(22.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function uDv takes nothing returns boolean
-return(Fv[3]<=R2I(22.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function ufv takes nothing returns boolean
-return(Fv[4]<=R2I(22.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function uFv takes nothing returns boolean
-return(Fv[5]<=R2I(10.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function ugv takes nothing returns boolean
-return(Fv[6]<=R2I(10.))
+return(Fv[6]<=R2I(100.))
 endfunction
 function uGv takes nothing returns boolean
-return(Fv[7]<=R2I(10.))
+return(Fv[7]<=R2I(100.))
 endfunction
 function uhv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -23322,19 +23322,19 @@ function ujv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00Y')
 endfunction
 function uJv takes nothing returns boolean
-return(Fv[1]<=R2I(.01))
+return(Fv[1]<=R2I(100.))
 endfunction
 function ukv takes nothing returns boolean
-return(Fv[2]<=R2I(.01))
+return(Fv[2]<=R2I(100.))
 endfunction
 function uKv takes nothing returns boolean
-return(Fv[3]<=R2I(.01))
+return(Fv[3]<=R2I(100.))
 endfunction
 function ulv takes nothing returns boolean
-return(Fv[4]<=R2I(.01))
+return(Fv[4]<=R2I(100.))
 endfunction
 function uLv takes nothing returns boolean
-return(Fv[5]<=R2I(.01))
+return(Fv[5]<=R2I(100.))
 endfunction
 function umv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -23392,19 +23392,19 @@ function upv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n00Z')
 endfunction
 function uPv takes nothing returns boolean
-return(Fv[1]<=R2I(.05))
+return(Fv[1]<=R2I(100.))
 endfunction
 function uqv takes nothing returns boolean
-return(Fv[2]<=R2I(.05))
+return(Fv[2]<=R2I(100.))
 endfunction
 function uQv takes nothing returns boolean
-return(Fv[3]<=R2I(.05))
+return(Fv[3]<=R2I(100.))
 endfunction
 function usv takes nothing returns boolean
-return(Fv[4]<=R2I(.05))
+return(Fv[4]<=R2I(100.))
 endfunction
 function uSv takes nothing returns boolean
-return(Fv[5]<=R2I(.05))
+return(Fv[5]<=R2I(100.))
 endfunction
 function utv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -23462,19 +23462,19 @@ function uuv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n010')
 endfunction
 function uUv takes nothing returns boolean
-return(Fv[1]<=R2I(.1))
+return(Fv[1]<=R2I(100.))
 endfunction
 function uwv takes nothing returns boolean
-return(Fv[2]<=R2I(.1))
+return(Fv[2]<=R2I(100.))
 endfunction
 function uWv takes nothing returns boolean
-return(Fv[3]<=R2I(.1))
+return(Fv[3]<=R2I(100.))
 endfunction
 function uyv takes nothing returns boolean
-return(Fv[4]<=R2I(.1))
+return(Fv[4]<=R2I(100.))
 endfunction
 function uYv takes nothing returns boolean
-return(Fv[5]<=R2I(.1))
+return(Fv[5]<=R2I(100.))
 endfunction
 function uzv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -23532,7 +23532,7 @@ function u_v takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n018')
 endfunction
 function u0v takes nothing returns boolean
-return(Fv[1]<=R2I(.15))
+return(Fv[1]<=R2I(100.))
 endfunction
 function u1v takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -23550,28 +23550,28 @@ function u3v takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n011')
 endfunction
 function u4v takes nothing returns boolean
-return(Fv[1]<=R2I(10.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function u5v takes nothing returns boolean
-return(Fv[2]<=R2I(10.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function u6v takes nothing returns boolean
-return(Fv[3]<=R2I(10.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function u7v takes nothing returns boolean
-return(Fv[4]<=R2I(1.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function u8v takes nothing returns boolean
-return(Fv[5]<=R2I(1.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function u9v takes nothing returns boolean
-return(Fv[6]<=R2I(1.))
+return(Fv[6]<=R2I(100.))
 endfunction
 function Uvv takes nothing returns boolean
-return(Fv[7]<=R2I(1.))
+return(Fv[7]<=R2I(100.))
 endfunction
 function Uev takes nothing returns boolean
-return(Fv[8]<=R2I(1.))
+return(Fv[8]<=R2I(100.))
 endfunction
 function Uxv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -23659,31 +23659,31 @@ function Urv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n012')
 endfunction
 function Uiv takes nothing returns boolean
-return(Fv[1]<=R2I(9.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Uav takes nothing returns boolean
-return(Fv[2]<=R2I(9.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Unv takes nothing returns boolean
-return(Fv[3]<=R2I(9.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function UVv takes nothing returns boolean
-return(Fv[4]<=R2I(.15))
+return(Fv[4]<=R2I(100.))
 endfunction
 function UEv takes nothing returns boolean
-return(Fv[5]<=R2I(3.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function UXv takes nothing returns boolean
-return(Fv[6]<=R2I(3.))
+return(Fv[6]<=R2I(100.))
 endfunction
 function UOv takes nothing returns boolean
-return(Fv[7]<=R2I(3.))
+return(Fv[7]<=R2I(100.))
 endfunction
 function URv takes nothing returns boolean
-return(Fv[8]<=R2I(3.))
+return(Fv[8]<=R2I(100.))
 endfunction
 function UIv takes nothing returns boolean
-return(Fv[9]<=R2I(3.))
+return(Fv[9]<=R2I(100.))
 endfunction
 function UAv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -23781,22 +23781,22 @@ function Ubv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n017')
 endfunction
 function UBv takes nothing returns boolean
-return(Fv[1]<=R2I(10.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Ucv takes nothing returns boolean
-return(Fv[2]<=R2I(10.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function UCv takes nothing returns boolean
-return(Fv[3]<=R2I(10.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function Udv takes nothing returns boolean
-return(Fv[4]<=R2I(10.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function UDv takes nothing returns boolean
-return(Fv[5]<=R2I(10.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function Ufv takes nothing returns boolean
-return(Fv[6]<=R2I(10.))
+return(Fv[6]<=R2I(100.))
 endfunction
 function UFv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -23864,19 +23864,19 @@ function UGv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01C')
 endfunction
 function Uhv takes nothing returns boolean
-return(Fv[1]<=R2I(5.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function UHv takes nothing returns boolean
-return(Fv[2]<=R2I(5.5))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Ujv takes nothing returns boolean
-return(Fv[3]<=R2I(5.5))
+return(Fv[3]<=R2I(100.))
 endfunction
 function UJv takes nothing returns boolean
-return(Fv[4]<=R2I(3.3))
+return(Fv[4]<=R2I(100.))
 endfunction
 function Ukv takes nothing returns boolean
-return(Fv[5]<=R2I(.01))
+return(Fv[5]<=R2I(100.))
 endfunction
 function UKv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -23934,19 +23934,19 @@ function ULv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01G')
 endfunction
 function Umv takes nothing returns boolean
-return(Fv[1]<=R2I(8.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function UMv takes nothing returns boolean
-return(Fv[2]<=R2I(8.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Upv takes nothing returns boolean
-return(Fv[3]<=R2I(8.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function UPv takes nothing returns boolean
-return(Fv[4]<=R2I(8.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function Uqv takes nothing returns boolean
-return(Fv[5]<=R2I(8.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function UQv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -24004,19 +24004,19 @@ function USv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='u002')
 endfunction
 function Utv takes nothing returns boolean
-return(Fv[1]<=R2I(5.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function UTv takes nothing returns boolean
-return(Fv[2]<=R2I(5.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function Uuv takes nothing returns boolean
-return(Fv[3]<=R2I(8.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function UUv takes nothing returns boolean
-return(Fv[4]<=R2I(7.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function Uwv takes nothing returns boolean
-return(Fv[5]<=R2I(9.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function UWv takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -24080,40 +24080,40 @@ function UYv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01I')
 endfunction
 function Uzv takes nothing returns boolean
-return(Fv[1]<=R2I(5.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function UZv takes nothing returns boolean
-return(Fv[2]<=R2I(5.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function U_v takes nothing returns boolean
-return(Fv[3]<=R2I(5.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function U0v takes nothing returns boolean
-return(Fv[4]<=R2I(3.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function U1v takes nothing returns boolean
-return(Fv[5]<=R2I(10.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function U2v takes nothing returns boolean
-return(Fv[6]<=R2I(10.))
+return(Fv[6]<=R2I(100.))
 endfunction
 function U3v takes nothing returns boolean
-return(Fv[7]<=R2I(10.))
+return(Fv[7]<=R2I(100.))
 endfunction
 function U4v takes nothing returns boolean
-return(Fv[8]<=R2I(10.))
+return(Fv[8]<=R2I(100.))
 endfunction
 function U5v takes nothing returns boolean
-return(Fv[9]<=R2I(10.))
+return(Fv[9]<=R2I(100.))
 endfunction
 function U6v takes nothing returns boolean
-return(Fv[$A]<=R2I(10.))
+return(Fv[$A]<=R2I(100.))
 endfunction
 function U7v takes nothing returns boolean
-return(Fv[$B]<=R2I(10.))
+return(Fv[$B]<=R2I(100.))
 endfunction
 function U8v takes nothing returns boolean
-return(Fv[$C]<=R2I(5.))
+return(Fv[$C]<=R2I(100.))
 endfunction
 function U9v takes nothing returns nothing
 set Fv[1]=GetRandomInt(1,'d')
@@ -24241,22 +24241,22 @@ function wev takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01J')
 endfunction
 function wxv takes nothing returns boolean
-return(Fv[1]<=R2I(3.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function wov takes nothing returns boolean
-return(Fv[2]<=R2I(3.3))
+return(Fv[2]<=R2I(100.))
 endfunction
 function wrv takes nothing returns boolean
-return(Fv[3]<=R2I(2.25))
+return(Fv[3]<=R2I(100.))
 endfunction
 function wiv takes nothing returns boolean
-return(Fv[4]<=R2I(2.25))
+return(Fv[4]<=R2I(100.))
 endfunction
 function wav takes nothing returns boolean
-return(Fv[5]<=R2I(5.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function wnv takes nothing returns boolean
-return(Fv[6]<=R2I(3.))
+return(Fv[6]<=R2I(100.))
 endfunction
 function wVv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24324,16 +24324,16 @@ function wXv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01K')
 endfunction
 function wOv takes nothing returns boolean
-return(Fv[1]<=R2I(10.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function wRv takes nothing returns boolean
-return(Fv[2]<=R2I(10.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function wIv takes nothing returns boolean
-return(Fv[3]<=R2I(5.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function wAv takes nothing returns boolean
-return(Fv[4]<=R2I(10.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function wNv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24381,10 +24381,10 @@ function wBv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01M')
 endfunction
 function wcv takes nothing returns boolean
-return(Fv[1]<=R2I(5.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function wCv takes nothing returns boolean
-return(Fv[2]<=R2I(5.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function wdv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24412,16 +24412,16 @@ function wfv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01R')
 endfunction
 function wFv takes nothing returns boolean
-return(Fv[1]<=R2I(3.3))
+return(Fv[1]<=R2I(100.))
 endfunction
 function wgv takes nothing returns boolean
-return(Fv[2]<=R2I(2.5))
+return(Fv[2]<=R2I(100.))
 endfunction
 function wGv takes nothing returns boolean
-return(Fv[3]<=R2I(3.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function whv takes nothing returns boolean
-return(Fv[4]<=R2I(10.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function wHv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24469,13 +24469,13 @@ function wJv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01S')
 endfunction
 function wkv takes nothing returns boolean
-return(Fv[1]<=R2I(3.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function wKv takes nothing returns boolean
-return(Fv[2]<=R2I(3.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function wlv takes nothing returns boolean
-return(Fv[3]<=R2I(3.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function wLv takes nothing returns boolean
 return(Fv[4]<=R2I(100.))
@@ -24526,31 +24526,31 @@ function wpv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01U')
 endfunction
 function wPv takes nothing returns boolean
-return(Fv[1]<=R2I(2.2))
+return(Fv[1]<=R2I(100.))
 endfunction
 function wqv takes nothing returns boolean
-return(Fv[2]<=R2I(2.2))
+return(Fv[2]<=R2I(100.))
 endfunction
 function wQv takes nothing returns boolean
-return(Fv[3]<=R2I(3.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function wsv takes nothing returns boolean
-return(Fv[4]<=R2I(1.75))
+return(Fv[4]<=R2I(100.))
 endfunction
 function wSv takes nothing returns boolean
-return(Fv[5]<=R2I(1.75))
+return(Fv[5]<=R2I(100.))
 endfunction
 function wtv takes nothing returns boolean
-return(Fv[6]<=R2I(5.))
+return(Fv[6]<=R2I(100.))
 endfunction
 function wTv takes nothing returns boolean
-return(Fv[7]<=R2I(5.))
+return(Fv[7]<=R2I(100.))
 endfunction
 function wuv takes nothing returns boolean
-return(Fv[8]<=R2I(5.))
+return(Fv[8]<=R2I(100.))
 endfunction
 function wUv takes nothing returns boolean
-return(Fv[9]<=R2I(5.))
+return(Fv[9]<=R2I(100.))
 endfunction
 function wwv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24648,7 +24648,7 @@ function wyv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01Z')
 endfunction
 function wYv takes nothing returns boolean
-return(Fv[1]<=R2I(5.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function wzv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24666,7 +24666,7 @@ function w_v takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n022')
 endfunction
 function w0v takes nothing returns boolean
-return(Fv[1]<=R2I(5.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function w1v takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24684,7 +24684,7 @@ function w3v takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n023')
 endfunction
 function w4v takes nothing returns boolean
-return(Fv[1]<=R2I(5.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function w5v takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24702,7 +24702,7 @@ function w7v takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n021')
 endfunction
 function w8v takes nothing returns boolean
-return(Fv[1]<=R2I(5.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function w9v takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24720,7 +24720,7 @@ function Wev takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n020')
 endfunction
 function Wxv takes nothing returns boolean
-return(Fv[1]<=R2I(5.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Wov takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24738,10 +24738,10 @@ function Wiv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n01Y')
 endfunction
 function Wav takes nothing returns boolean
-return(Fv[1]<=R2I(5.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Wnv takes nothing returns boolean
-return(Fv[2]<=R2I(1.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function WVv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24769,13 +24769,13 @@ function WXv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n024')
 endfunction
 function WOv takes nothing returns boolean
-return(Fv[1]<=R2I(1.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function WRv takes nothing returns boolean
-return(Fv[2]<=R2I(5.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function WIv takes nothing returns boolean
-return(Fv[3]<=R2I(25.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function WAv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -24813,19 +24813,19 @@ function Wbv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n028')
 endfunction
 function WBv takes nothing returns boolean
-return(Fv[1]<=R2I(3.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Wcv takes nothing returns boolean
-return(Fv[2]<=R2I(2.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function WCv takes nothing returns boolean
-return(Fv[3]<=R2I(3.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function Wdv takes nothing returns boolean
-return(Fv[4]<=R2I(10.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function WDv takes nothing returns boolean
-return(Fv[5]<=R2I(10.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function Wfv takes nothing returns nothing
 call DisableTrigger(bd)
@@ -24884,22 +24884,22 @@ function Wgv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n025')
 endfunction
 function WGv takes nothing returns boolean
-return(Fv[1]<=R2I(3.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Whv takes nothing returns boolean
-return(Fv[2]<=R2I(2.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function WHv takes nothing returns boolean
-return(Fv[3]<=R2I(2.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function Wjv takes nothing returns boolean
-return(Fv[4]<=R2I(7.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function WJv takes nothing returns boolean
-return(Fv[5]<=R2I(7.5))
+return(Fv[5]<=R2I(100.))
 endfunction
 function Wkv takes nothing returns boolean
-return(Fv[6]<=R2I(7.5))
+return(Fv[6]<=R2I(100.))
 endfunction
 function WKv takes nothing returns boolean
 return(Fv[7]<=R2I(100.))
@@ -24980,19 +24980,19 @@ function Wmv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02E')
 endfunction
 function WMv takes nothing returns boolean
-return(Fv[1]<=R2I(5.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Wpv takes nothing returns boolean
-return(Fv[2]<=R2I(5.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function WPv takes nothing returns boolean
-return(Fv[3]<=R2I(5.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function Wqv takes nothing returns boolean
-return(Fv[4]<=R2I(10.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function WQv takes nothing returns boolean
-return(Fv[5]<=R2I(10.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function Wsv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25050,31 +25050,31 @@ function Wtv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02G')
 endfunction
 function WTv takes nothing returns boolean
-return(Fv[1]<=R2I(1.75))
+return(Fv[1]<=R2I(100.))
 endfunction
 function Wuv takes nothing returns boolean
-return(Fv[2]<=R2I(1.75))
+return(Fv[2]<=R2I(100.))
 endfunction
 function WUv takes nothing returns boolean
-return(Fv[3]<=R2I(1.5))
+return(Fv[3]<=R2I(100.))
 endfunction
 function Wwv takes nothing returns boolean
-return(Fv[4]<=R2I(1.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function WWv takes nothing returns boolean
-return(Fv[5]<=R2I(1.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function Wyv takes nothing returns boolean
-return(Fv[6]<=R2I(1.75))
+return(Fv[6]<=R2I(100.))
 endfunction
 function WYv takes nothing returns boolean
-return(Fv[7]<=R2I(2.25))
+return(Fv[7]<=R2I(100.))
 endfunction
 function Wzv takes nothing returns boolean
-return(Fv[8]<=R2I(2.25))
+return(Fv[8]<=R2I(100.))
 endfunction
 function WZv takes nothing returns boolean
-return(Fv[9]<=R2I(2.25))
+return(Fv[9]<=R2I(100.))
 endfunction
 function W_v takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25172,22 +25172,22 @@ function W1v takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02J')
 endfunction
 function W2v takes nothing returns boolean
-return(Fv[1]<=R2I(5.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function W3v takes nothing returns boolean
-return(Fv[2]<=R2I(5.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function W4v takes nothing returns boolean
-return(Fv[3]<=R2I(5.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function W5v takes nothing returns boolean
-return(Fv[4]<=R2I(10.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function W6v takes nothing returns boolean
-return(Fv[5]<=R2I(10.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function W7v takes nothing returns boolean
-return(Fv[6]<=R2I(10.))
+return(Fv[6]<=R2I(100.))
 endfunction
 function W8v takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25255,13 +25255,13 @@ function yvv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02L')
 endfunction
 function yev takes nothing returns boolean
-return(Fv[1]<=R2I(2.25))
+return(Fv[1]<=R2I(100.))
 endfunction
 function yxv takes nothing returns boolean
-return(Fv[2]<=R2I(3.3))
+return(Fv[2]<=R2I(100.))
 endfunction
 function yov takes nothing returns boolean
-return(Fv[3]<=R2I(3.3))
+return(Fv[3]<=R2I(100.))
 endfunction
 function yrv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25299,19 +25299,19 @@ function yav takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02N')
 endfunction
 function ynv takes nothing returns boolean
-return(Fv[1]<=R2I(3.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function yVv takes nothing returns boolean
-return(Fv[2]<=R2I(3.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function yEv takes nothing returns boolean
-return(Fv[3]<=R2I(3.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function yXv takes nothing returns boolean
-return(Fv[4]<=R2I(3.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function yOv takes nothing returns boolean
-return(Fv[5]<=R2I(3.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function yRv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25369,19 +25369,19 @@ function yAv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02N')
 endfunction
 function yNv takes nothing returns boolean
-return(Fv[1]<=R2I(13.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function ybv takes nothing returns boolean
-return(Fv[2]<=R2I(13.))
+return(Fv[2]<=R2I(100.))
 endfunction
 function yBv takes nothing returns boolean
-return(Fv[3]<=R2I(13.))
+return(Fv[3]<=R2I(100.))
 endfunction
 function ycv takes nothing returns boolean
-return(Fv[4]<=R2I(13.))
+return(Fv[4]<=R2I(100.))
 endfunction
 function yCv takes nothing returns boolean
-return(Fv[5]<=R2I(13.))
+return(Fv[5]<=R2I(100.))
 endfunction
 function ydv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25439,19 +25439,19 @@ function yfv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02V')
 endfunction
 function yFv takes nothing returns boolean
-return(Fv[1]<=R2I(2.5))
+return(Fv[1]<=R2I(100.))
 endfunction
 function ygv takes nothing returns boolean
-return(Fv[2]<=R2I(2.5))
+return(Fv[2]<=R2I(100.))
 endfunction
 function yGv takes nothing returns boolean
-return(Fv[3]<=R2I(2.5))
+return(Fv[3]<=R2I(100.))
 endfunction
 function yhv takes nothing returns boolean
-return(Fv[4]<=R2I(2.5))
+return(Fv[4]<=R2I(100.))
 endfunction
 function yHv takes nothing returns boolean
-return(Fv[5]<=R2I(2.5))
+return(Fv[5]<=R2I(100.))
 endfunction
 function yjv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25509,16 +25509,16 @@ function ykv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02W')
 endfunction
 function yKv takes nothing returns boolean
-return(Fv[1]<=R2I(3.3))
+return(Fv[1]<=R2I(100.))
 endfunction
 function ylv takes nothing returns boolean
-return(Fv[2]<=R2I(3.3))
+return(Fv[2]<=R2I(100.))
 endfunction
 function yLv takes nothing returns boolean
-return(Fv[3]<=R2I(3.3))
+return(Fv[3]<=R2I(100.))
 endfunction
 function ymv takes nothing returns boolean
-return(Fv[4]<=R2I(3.3))
+return(Fv[4]<=R2I(100.))
 endfunction
 function yMv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25566,10 +25566,10 @@ function yPv takes nothing returns boolean
 return(GetUnitTypeId(GetTriggerUnit())=='n02Y')
 endfunction
 function yqv takes nothing returns boolean
-return(Fv[1]<=R2I(1.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function yQv takes nothing returns boolean
-return(Fv[2]<=R2I(2.85))
+return(Fv[2]<=R2I(100.))
 endfunction
 function ysv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -25600,7 +25600,7 @@ function yTv takes nothing returns boolean
 return(ytv())
 endfunction
 function yuv takes nothing returns boolean
-return(Fv[1]<=R2I(9.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function yUv takes nothing returns nothing
 set Fv[1]=GetRandomInt(R2I(1.),R2I(100.))
@@ -28090,7 +28090,7 @@ function rPe takes nothing returns boolean
 return(UnitHasItemOfTypeBJ(GetTriggerUnit(),'I08M'))
 endfunction
 function rqe takes nothing returns boolean
-return(Fv[1]<=R2I(1.))
+return(Fv[1]<=R2I(100.))
 endfunction
 function rQe takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
@@ -30553,6 +30553,21 @@ local integer Ff
 local integer gf
 local version v
 local integer Af
+local string udg_info
+local quest udg_quest
+set udg_quest=CreateQuest()
+    call QuestSetTitle(udg_quest,"Super High Drop Rate Credit")
+    set udg_info="|cFFFFDF5FThis is |r|cFFFF0000SHDR |r|cFFFFDF5Fversion by |r|cFFFF0000Clanhinata|r
+	|cFFFFDF5FVisit |r|cFFFF0000wc3edit.net|r|cFFFFDF5F for more information|r
+	|cFFFFDF5FJoin my |r|cFFFF0000discord|r|cFFFFDF5F for something idk , maybe map request ?|r
+	|cFFFFDF5FDiscord Link : https://discord.gg/VRtmTxp |r
+    |cFFFFDF5FFeature List:
+    100% Drop Rate
+    "
+    call QuestSetDescription(udg_quest,udg_info)
+    call QuestSetIconPath(udg_quest,"ReplaceableTextures\\CommandButtons\\BTNAmbush.blp")
+    call QuestSetRequired(udg_quest,true)
+    set udg_quest=null
 call SetCameraBounds(-16384.+GetCameraMargin(CAMERA_MARGIN_LEFT),-16384.+GetCameraMargin(CAMERA_MARGIN_BOTTOM),16384.-GetCameraMargin(CAMERA_MARGIN_RIGHT),16384.-GetCameraMargin(CAMERA_MARGIN_TOP),-16384.+GetCameraMargin(CAMERA_MARGIN_LEFT),16384.-GetCameraMargin(CAMERA_MARGIN_TOP),16384.-GetCameraMargin(CAMERA_MARGIN_RIGHT),-16384.+GetCameraMargin(CAMERA_MARGIN_BOTTOM))
 call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl","Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
 call NewSoundEnvironment("Default")
